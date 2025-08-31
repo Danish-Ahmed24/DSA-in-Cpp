@@ -17,7 +17,7 @@ int main()
     }
     
     // freeing
-    delete name;
+    delete []name;
     
     return 0;
 }
