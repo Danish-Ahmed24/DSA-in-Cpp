@@ -42,21 +42,20 @@ class Student{
 
 int main()
 {
-    Student std1("student 1");
-    std1.setMarksAtIndex(10,0);
-    std1.setMarksAtIndex(15,1);
-    std1.setMarksAtIndex(20,2);
+    Student *std1= new Student("student 1");
+    std1->setMarksAtIndex(10,0);
+    std1->setMarksAtIndex(15,1);
+    std1->setMarksAtIndex(20,2);
 
-    Student std2=std1;
+    Student std2=*std1;
     cout<<"---Average before destroying original object---"<<endl;
-    std1.averageScore();
+    std1->averageScore();
     std2.averageScore();
+    cout << "--- Deleting original object ---" << endl;
+    delete std1;
     cout<<"---Average after destroying original object---"<<endl;
-    std1 = NULL;
     std2.averageScore();
     
     return 0;
 }
 
-// how to destroy the object to show the problem
-// double check by gpt of solution of q1
