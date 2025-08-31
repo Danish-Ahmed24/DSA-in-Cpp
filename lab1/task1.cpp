@@ -1,16 +1,62 @@
 #include<iostream>
 using namespace std;
+
+
 class Student{
-    
+
+    string name;
+    double* marks;
+
+    public:
+
+        Student(string name){
+            this->name=name;
+            this->marks=new double[3];
+        }
+
+        ~Student(){
+            delete[] marks;
+        }
+
+        void setMarksAtIndex(double marks , int index){
+            if(index>=0 && index<3){
+                *(this->marks+index) = marks;
+            }
+            else{
+                cout<<"cant add at index "<<index<<" choose (0-2)"<<endl;
+            }
+        }
+
+        void averageScore(){
+            double res=0.0;
+            for (int i = 0; i < 3; i++)
+            {
+                res+=*(this->marks+i);
+            }
+            res/=3;
+            cout<<"Average of Object: "<<name<<" = "<<res<<endl;
+        }
+
 };
+
+
 int main()
 {
-    cout<<"hello world";
+    Student std1("student 1");
+    std1.setMarksAtIndex(10,0);
+    std1.setMarksAtIndex(15,1);
+    std1.setMarksAtIndex(20,2);
+
+    Student std2=std1;
+    cout<<"---Average before destroying original object---"<<endl;
+    std1.averageScore();
+    std2.averageScore();
+    cout<<"---Average after destroying original object---"<<endl;
+    std1 = NULL;
+    std2.averageScore();
+    
     return 0;
 }
 
-// Q1. Create a Student class that stores a student’s name and marks for three subjects using DMA.
-// Include functions to set the marks and display the average score. In your program, implement
-// shallow copy by creating one student object, set their marks, and then create another object as a
-// copy of the first. Display the average for both and observe what happens when the original object
-// is destroyed. Then observes the shallow copy problem.
+// how to destroy the object to show the problem
+// double check by gpt of solution of q1
