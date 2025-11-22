@@ -1,0 +1,12 @@
+for 'i' be current index
+    
+    left = i*2
+    right = i*2 + 1
+    parent = i/2
+
+for 'n' be size of heap/array
+
+    range of leaf nodes is  
+        n/2 + 1 ---> n
+    range of not leaf nodes is 
+        0 ---> n/2 
