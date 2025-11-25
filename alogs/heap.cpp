@@ -8,6 +8,8 @@ class Heap{
         Heap(){
 
         }
+
+        
     void insert(int val){
         size++;
         int index = size;
@@ -94,7 +96,9 @@ void heapify(int arr[] , int n ,int i){
             heapify(arr,n,largest);
         }
     }
-int main()
+
+
+    int main()
 {
     // Heap h;
     // h.insert(50);
