@@ -16,7 +16,7 @@ void heapify(int arr[],int size , int i){
     if(smallest != i){
         swap(arr[smallest],arr[i]);
         heapify(arr,size,smallest);
-    }
+    } 
 }
 
 

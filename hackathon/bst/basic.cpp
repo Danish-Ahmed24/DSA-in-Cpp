@@ -82,7 +82,7 @@ class Bst{
         
 
     }
-
+ 
     void postorder(Node* root){
         if(root == NULL){
             return;
@@ -154,8 +154,6 @@ int main()
     bst.insert(5);
     bst.insert(6);
     bst.insert(7);
-
-
 
     bst.preorder(bst.root);
 }

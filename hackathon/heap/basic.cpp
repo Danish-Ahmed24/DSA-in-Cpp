@@ -16,9 +16,21 @@ void heapify(int arr[],int size,int i){
     if(largest != i){
         swap(arr[i],arr[largest]);
         heapify(arr,size,largest);
-    }
-
+    } 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
     
