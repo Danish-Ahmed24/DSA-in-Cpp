@@ -18,5 +18,5 @@ void naive(string pattern , string text){
 
 int main()
 {
-        
+    
 }
